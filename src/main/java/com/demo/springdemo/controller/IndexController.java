@@ -13,17 +13,6 @@ public class IndexController {
     @GetMapping(value = "/index")
     public String index(Model model) {
 
-        List<Band>  bandList = List.of(
-                new Band("Eagles","Rock","USA", 1971, 7),
-                new Band("Metallica","Heavy metal","USA",1981,10),
-                new Band("ABBA","Pop","Sweden",1972,9),
-                new Band("The Prodigy","EDM","UK",1990,7)
-        );
-
-        model.addAttribute("bandList", bandList);
-
-
-
         return "index"; //sau index.html
     }
 
