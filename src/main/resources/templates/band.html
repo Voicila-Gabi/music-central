@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Bands Overview</title>
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<h1>Bands:</h1>
+
+<body>
+<table> <!table>
+
+    <thead>     <!--table header-->
+    <tr>    <!--table row-->
+        <td>Name</td>   <!--table column-->
+        <td>Genre</td>
+        <td>Country of Origin</td>
+        <td>Founding Year</td>
+        <td>Number of Albums</td>
+
+    </tr>
+    </thead>    <!--end table header-->
+    <tbody>
+    <tr th:each="band : ${bandList}">
+        <td th:text="${band.name}"/>
+        <td th:text="${band.genre}"/>
+        <td th:text="${band.countryOfOrigin}"/>
+        <td th:text="${band.foundingYear}"/>
+        <td th:text="${band.numberOfAlbums}"/>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
