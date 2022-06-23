@@ -7,29 +7,8 @@
 <body>
 <h1>Welcome to Music Central</h1>
 <p>The place to check out your favorite bands</p>
-<p th:text="${greetings}"></p>
-<p th:text="${myText}"></p>
 
-<div th:each="fruit : ${fruits}">
-    <p th:text="${fruit}"></p>
-</div>
 
-<table> <!table>
-    <thead>     <!--table header-->
-        <tr>    <!--table row-->
-            <td>Name</td>   <!--table column-->
-            <td>Salary</td>
-            <td>Department</td>
-        </tr>
-    </thead>    <!--end table header-->
-    <tbody>
-        <tr th:each="employee : ${employeeList}">
-            <td th:text="${employee.name}"/>
-            <td th:text="${employee.salary}"/>
-            <td th:text="${employee.department}"/>
-        </tr>
-    </tbody>
-</table>
 
 </body>
 </html>
