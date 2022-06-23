@@ -1,10 +1,9 @@
 package com.demo.springdemo.controller;
 
-import com.demo.springdemo.model.Employee;
+import com.demo.springdemo.model.Band;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -14,21 +13,16 @@ public class IndexController {
     @GetMapping(value = "/index")
     public String index(Model model) {
 
-        String text = "Hello from Spring Controller";
-
-        model.addAttribute("greetings", text);
-        model.addAttribute("myText", "some random text");
-
-        List<String> fruits = List.of("mere", "banane", "pepeni", "pere", "cirese", "capsuni");
-        model.addAttribute("fruits", fruits);
-
-        List<Employee> employeeList = List.of(
-                new Employee("Max", 6500, "IT Support"),
-                new Employee("George", 8650, "Management"),
-                new Employee("Andreea", 7345, "Logistics")
+        List<Band>  bandList = List.of(
+                new Band("Eagles","Rock","USA", 1971, 7),
+                new Band("Metallica","Heavy metal","USA",1981,10),
+                new Band("ABBA","Pop","Sweden",1972,9),
+                new Band("The Prodigy","EDM","UK",1990,7)
         );
 
-        model.addAttribute("employeeList", employeeList);
+        model.addAttribute("bandList", bandList);
+
+
 
         return "index"; //sau index.html
     }
