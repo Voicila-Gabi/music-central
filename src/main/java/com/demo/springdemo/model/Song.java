@@ -44,4 +44,10 @@ public class Song {
     public void setReleaseYear(int releaseYear) {
         this.releaseYear = releaseYear;
     }
+
+    public String lengthToString(Song current) {
+        int nrMin = current.lengthInSeconds / 60;
+        int nrSec = current.lengthInSeconds % 59;
+        return String.valueOf(nrMin) + ":" + String.valueOf(nrSec);
+    }
 }

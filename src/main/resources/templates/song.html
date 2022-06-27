@@ -3,37 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Songs</title>
+    <!--adaugare css bootstrap-->
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/css/bootstrap.min.css}">
 </head>
 
 <body>
-<h1>Songs</h1>
-<p>The songs section of the site</p>
 
-<table> <!table>
+<div th:insert="fragments/navBar :: navBar"></div>
 
-    <style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
-
+<table class="table table-hover table-bordered">
     <thead>     <!--table header-->
     <tr>    <!--table row-->
         <td>Title</td>   <!--table column-->
         <td>Album</td>
-        <td>Length (s)</td>
+        <td>Length</td>
         <td>Release year</td>
     </tr>
     </thead>    <!--end table header-->
@@ -41,11 +24,23 @@ tr:nth-child(even) {
     <tr th:each="song : ${songList}">
         <td th:text="${song.title}"/>
         <td th:text="${song.album}"/>
-        <td th:text="${song.lengthInSeconds}"/>
+        <!--if-else pentru afisare corecta a secundelor-->
+        <div th:if="${song.lengthInSeconds % 60 < 10}">
+            <td th:text="${song.lengthInSeconds/60} + ':0' + ${song.lengthInSeconds % 60}"/>
+        </div>
+        <div th:if="${song.lengthInSeconds % 60 >= 10}">
+            <td th:text="${song.lengthInSeconds/60} + ':' + ${song.lengthInSeconds % 60}"/>
+        </div>
+        <!--end if-->
         <td th:text="${song.releaseYear}"/>
     </tr>
     </tbody>
 </table>
+
+
+<!--adaugare javascript bootstrap-->
+<script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}">
+</script>
 
 </body>
 </html>
