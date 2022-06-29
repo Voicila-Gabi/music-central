@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Add a band</title>
+  <!--adaugare css bootstrap-->
+  <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+
+<!--bara de navigare-->
+<div th:insert="fragments/navBar :: navBar"></div>
+
+<div class="container p-3">
+  <div class="card">
+    <div class="card-body bg-light">
+      <div class="card-header">
+        Add bands in the database
+      </div>
+      <div> <!--TO DO formular aici-->
+        <form action="">
+          <label for="Name" class="form-label">Name:</label>
+          <input
+                  type="name"
+                  id="name"
+                  placeholder="Name of the band"
+                  class="form-control"
+          />
+          <label for="genre" class="form-label">Genre:</label>
+          <input
+                  type="genre"
+                  id="genre"
+                  placeholder="Genre of the band"
+                  class="form-control"
+          />
+          <div class="row">
+            <div class="col">
+              <label for="countryOfOrigin" class="form-label">Country of origin:</label>
+              <input
+                      type="countryOfOrigin"
+                      id="countryOfOrigin"
+                      placeholder="Country of origin of the band"
+                      class="form-control"
+              />
+            </div>
+            <div class="col">
+              <label for="foundingYear" class="form-label">Founding Year:</label>
+              <input
+                      type="foundingYear"
+                      id="foundingYear"
+                      placeholder="Founding Year of the band"
+                      class="form-control"
+              />
+            </div>
+            <div class="col">
+              <label for="numberOfAlbums" class="form-label">Number of albums:</label>
+              <input
+                      type="numberOfAlbums"
+                      id="numberOfAlbums"
+                      placeholder="Number of albums"
+                      class="form-control"
+              />
+            </div>
+          </div>
+          <div class="p-3">
+            <button type="button" class="btn btn-primary bg-dark">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--adaugare javascript bootstrap-->
+<script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}">
+</script>
+
+</body>
+</html>
