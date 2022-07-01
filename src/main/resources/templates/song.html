@@ -6,46 +6,56 @@
     <!--adaugare css bootstrap-->
     <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/css/bootstrap.min.css}">
 </head>
-
-<body>
-
-<div th:insert="fragments/navBar :: navBar"></div>
-
-<div class="container p-3">
-    <div class="card">
-        <div class="card-body bg-light">
-            <div class="card-header">
-                Songs in our database
+<body style="background-image: url('../img/bg.png');
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin:auto;
+    padding:0;">
+<header>
+    <!--bara de navigare-->
+    <div th:insert="fragments/navBar :: navBar"></div>
+</header>
+<main>
+    <section class="container p-3">
+        <div class="card">
+            <div class="card-body bg-light">
+                <div class="card-header">
+                    Songs in our database
+                </div>
+                <table class="table table-hover table-bordered">
+                    <thead>     <!--table header-->
+                    <tr>    <!--table row-->
+                        <td>Title</td>   <!--table data/table column-->
+                        <td>Album</td>
+                        <td>Length</td>
+                        <td>Release year</td>
+                    </tr>
+                    </thead>    <!--end table header-->
+                    <tbody>
+                    <tr th:each="song : ${songList}">
+                        <td th:text="${song.title}"/>
+                        <td th:text="${song.album}"/>
+                        <!--if-else pentru afisare corecta a secundelor-->
+                        <div th:if="${song.lengthInSeconds % 60 < 10}">
+                            <td th:text="${song.lengthInSeconds/60} + ':0' + ${song.lengthInSeconds % 60}"/>
+                        </div>
+                        <div th:if="${song.lengthInSeconds % 60 >= 10}">
+                            <td th:text="${song.lengthInSeconds/60} + ':' + ${song.lengthInSeconds % 60}"/>
+                        </div>
+                        <!--end if-->
+                        <td th:text="${song.releaseYear}"/>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
-            <table class="table table-hover table-bordered">
-                <thead>     <!--table header-->
-                <tr>    <!--table row-->
-                    <td>Title</td>   <!--table column-->
-                    <td>Album</td>
-                    <td>Length</td>
-                    <td>Release year</td>
-                </tr>
-                </thead>    <!--end table header-->
-                <tbody>
-                <tr th:each="song : ${songList}">
-                    <td th:text="${song.title}"/>
-                    <td th:text="${song.album}"/>
-                    <!--if-else pentru afisare corecta a secundelor-->
-                    <div th:if="${song.lengthInSeconds % 60 < 10}">
-                        <td th:text="${song.lengthInSeconds/60} + ':0' + ${song.lengthInSeconds % 60}"/>
-                    </div>
-                    <div th:if="${song.lengthInSeconds % 60 >= 10}">
-                        <td th:text="${song.lengthInSeconds/60} + ':' + ${song.lengthInSeconds % 60}"/>
-                    </div>
-                    <!--end if-->
-                    <td th:text="${song.releaseYear}"/>
-                </tr>
-                </tbody>
-            </table>
         </div>
-    </div>
-</div>
-
+    </section>
+</main>
+<footer>
+    <!--TO DO footer-->
+</footer>
 
 <!--adaugare javascript bootstrap-->
 <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}">

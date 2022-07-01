@@ -6,6 +6,10 @@ public class Song {
     private int lengthInSeconds;
     private int releaseYear;
 
+    public Song() {
+
+    }
+
     public Song(String title, String album, int lengthInSeconds, int releaseYear) {
         this.title = title;
         this.album = album;
@@ -45,6 +49,7 @@ public class Song {
         this.releaseYear = releaseYear;
     }
 
+    //unused
     public String lengthToString(Song current) {
         int nrMin = current.lengthInSeconds / 60;
         int nrSec = current.lengthInSeconds % 59;
