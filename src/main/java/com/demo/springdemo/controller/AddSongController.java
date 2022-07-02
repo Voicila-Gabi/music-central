@@ -14,7 +14,8 @@ public class AddSongController {
 
     @GetMapping(value = "/addSong")
     public String song(Model model) {
-        Song mySong = new Song();
+        //Song mySong = new Song();
+        Song mySong = Song.builder().build();   //creaza un obiect la fel ca un constructor fara paramterii
         model.addAttribute("song",mySong);
         return "addSong";
     }

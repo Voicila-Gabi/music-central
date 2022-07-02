@@ -14,17 +14,78 @@ public class SongController {
     public String song(Model model) {
 
         List<Song> songList = List.of(
-                new Song("New Kid in Town","Hotel California",300,1980),
-                new Song("Hotel California","Hotel California",400,1980),
-                new Song("Take it to the limit","One of These Nights",350,1980),
-                new Song("Nothing Else Matters","Metallica ",350,1980),
-                new Song("One","And Justice for All",350,1980),
-                new Song("Master Of Puppets","Master Of Puppets",300,1980),
-                new Song("Lay All Your Love On Me","Super Trouper",300,1980),
-                new Song("Dancing Queen","Arrival",300,1980),
-                new Song("Omen","Invaders Must Die",350,1980),
-                new Song("Need Some1","No Tourists",350,1980),
-                new Song("Light Up the Sky","No Tourists",350,1980)
+                Song.builder()      //builderul din lombok. Putem folosi cate campuri ale clasei vrem, in ce ordine vrem
+                        .title("New Kid in Town")
+                        .album("Hotel California")
+                        .lengthInSeconds(300)
+                        .releaseYear(1976)
+                        .build(),
+                Song.builder()
+                        .title("Hotel California")
+                        .album("Hotel California")
+                        .lengthInSeconds(401)
+                        .releaseYear(1976)
+                        .build(),
+                Song.builder()
+                        .title("Take it to the limit")
+                        .album("One of These Nights")
+                        .lengthInSeconds(352)
+                        .releaseYear(1980)
+                        .build(),
+                Song.builder()
+                        .title("Nothing Else Matters")
+                        .album("Metallica")
+                        .lengthInSeconds(350)
+                        .releaseYear(1980)
+                        .build(),
+                Song.builder()
+                        .title("One")
+                        .album("And Justice for All")
+                        .lengthInSeconds(350)
+                        .releaseYear(1990)
+                        .build(),
+                Song.builder()
+                        .title("Master Of Puppets")
+                        .album("Master Of Puppets")
+                        .lengthInSeconds(600)
+                        .releaseYear(1990)
+                        .build(),
+                Song.builder()
+                        .title("Lay All Your Love On Me")
+                        .album("Super Trouper")
+                        .lengthInSeconds(300)
+                        .releaseYear(2000)
+                        .build(),
+                Song.builder()
+                        .title("The Winner Takes It All")
+                        .album("Super Trouper")
+                        .lengthInSeconds(355)
+                        .releaseYear(2000)
+                        .build(),
+                Song.builder()
+                        .title("Dancing Queen")
+                        .album("Arrival")
+                        .lengthInSeconds(347)
+                        .releaseYear(2001)
+                        .build(),
+                Song.builder()
+                        .title("Omen")
+                        .album("Invaders Must Die")
+                        .lengthInSeconds(400)
+                        .releaseYear(1999)
+                        .build(),
+                Song.builder()
+                        .title("Need Some1")
+                        .album("No Tourists")
+                        .lengthInSeconds(333)
+                        .releaseYear(1990)
+                        .build(),
+                Song.builder()
+                        .title("Light Up the Sky")
+                        .album("No Tourists")
+                        .lengthInSeconds(350)
+                        .releaseYear(1990)
+                        .build()
         );
 
         model.addAttribute("songList", songList);
