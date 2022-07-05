@@ -27,7 +27,7 @@ padding:0;">
         <form th:action="@{/submitBand}" th:object="${band}" method="post">
           <label for="Name" class="form-label">Name:</label>
           <input
-                  type="name"
+                  type="text"
                   th:field="${band.name}"
                   id="name"
                   placeholder="Name of the band"
@@ -35,7 +35,7 @@ padding:0;">
           />
           <label for="genre" class="form-label">Genre:</label>
           <input
-                  type="genre"
+                  type="text"
                   th:field="${band.genre}"
                   id="genre"
                   placeholder="Genre of the band"
@@ -45,7 +45,7 @@ padding:0;">
             <div class="col">
               <label for="countryOfOrigin" class="form-label">Country of origin:</label>
               <input
-                      type="countryOfOrigin"
+                      type="text"
                       th:field="${band.countryOfOrigin}"
                       id="countryOfOrigin"
                       placeholder="Country of origin of the band"
@@ -55,7 +55,7 @@ padding:0;">
             <div class="col">
               <label for="foundingYear" class="form-label">Founding Year:</label>
               <input
-                      type="foundingYear"
+                      type="text"
                       th:field="${band.foundingYear}"
                       id="foundingYear"
                       placeholder="Founding Year of the band"
@@ -65,7 +65,7 @@ padding:0;">
             <div class="col">
               <label for="numberOfAlbums" class="form-label">Number of albums:</label>
               <input
-                      type="numberOfAlbums"
+                      type="text"
                       th:field="${band.numberOfAlbums}"
                       id="numberOfAlbums"
                       placeholder="Number of albums"

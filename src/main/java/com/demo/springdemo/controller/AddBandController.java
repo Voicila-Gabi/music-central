@@ -1,7 +1,6 @@
 package com.demo.springdemo.controller;
 
 import com.demo.springdemo.model.Band;
-import com.demo.springdemo.model.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +12,7 @@ public class AddBandController {
 
     @GetMapping(value = "/addBand")
     public String band(Model model) {
-        Band myBand = new Band();
+        Band myBand = Band.builder().build();
         model.addAttribute("band",myBand);
         return "addBand";
     }

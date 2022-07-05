@@ -23,7 +23,7 @@ public class AddSongController {
     @PostMapping(value = "/submitSong")
     public String submitSong(@ModelAttribute Song song) {
         System.out.println("Hello form submitSong");
-        System.out.println(song.getTitle());
+        //System.out.println(song.getTitle());
 
         saveToDatabase(song);
 
