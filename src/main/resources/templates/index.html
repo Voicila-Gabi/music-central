@@ -15,12 +15,27 @@
     margin:auto;
     padding:0;">
 
-<div th:insert="fragments/navBar :: navBar"></div>
+<header>
+    <!--bara de navigare-->
+    <div th:insert="fragments/navBar :: navBar"></div>
+</header>
 
-<h1>
-    <br>
-    Placeholder
-</h1>
+<main>
+    <section class="container p-3">
+        <div class="card">
+            <div class="card-body bg-light">
+                <div class="card-header">
+                    Placeholder
+                </div>
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et aliquet leo, sit amet scelerisque metus. Quisque tristique dolor sed ornare efficitur. Mauris congue nulla in posuere rhoncus. Nulla facilisi. Nunc urna lectus, pellentesque et pellentesque in, pellentesque vitae dui. Integer porttitor neque a nisl dapibus pellentesque. Pellentesque tempus erat et lorem pellentesque dictum. Donec vel maximus mauris, nec accumsan lorem. Mauris non venenatis risus, eget venenatis dui. Aenean nec nunc convallis, feugiat dui in, iaculis augue. Nullam ac suscipit nisl. Pellentesque sed magna id mi molestie consequat. Etiam nisi nisi, congue nec leo condimentum, molestie vulputate ligula.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 
 <!--adaugare javascript bootstrap-->
 <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}">
