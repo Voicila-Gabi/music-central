@@ -15,10 +15,12 @@ import javax.persistence.*;
 //spring-jpa
 @Entity
 @Table(name="t_song")
+@SequenceGenerator(name="song_id_seq", initialValue=13, allocationSize=100) //HARDCODED initial value = id + 1 fata de ultimul din data.sql (date initiale ca sa nu fie tabelul gol)
 public class Song {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)   //pt generare automata - atunci trebuie eliminate datele introduse in data.sql
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="song_id_seq")
     private int id;
 
     @Column(name = "title")     //ca in schema.sql
@@ -30,10 +32,4 @@ public class Song {
     @Column(name = "release_year")
     private int releaseYear;
 
-    //unused
-/*    public String lengthToString(Song current) {
-        int nrMin = current.lengthInSeconds / 60;
-        int nrSec = current.lengthInSeconds % 60;
-        return String.valueOf(nrMin) + ":" + String.valueOf(nrSec);
-    }*/
 }
