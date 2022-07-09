@@ -42,6 +42,13 @@
                                 placeholder="Album the song is from"
                                 class="form-control"
                         />
+                        <label for="band" class="form-label">Band:</label>
+                        <select class="form-select" th:field="${song.band.id}" id="band">
+                            <option th:each="band : ${bandList}"
+                                    th:value="${band.id}"
+                                    th:text="${band.name}">
+                            </option>
+                        </select>
                         <div class="row">
                             <div class="col">
                                 <label for="length" class="form-label">Length (seconds):</label>

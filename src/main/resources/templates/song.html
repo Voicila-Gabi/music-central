@@ -29,6 +29,7 @@
                     <tr>    <!--table row-->
                         <td>Title</td>   <!--table data/table column-->
                         <td>Album</td>
+                        <td>Band</td>
                         <td>Length</td>
                         <td>Release year</td>
                     </tr>
@@ -37,6 +38,7 @@
                     <tr th:each="song : ${songList}">
                         <td th:text="${song.title}"/>
                         <td th:text="${song.album}"/>
+                        <td th:text="${song.band.name}"/>   <!--preia datele din obiectul band referntiat cu foreign key-->
                         <!--if-else pentru afisare corecta a secundelor-->
                         <div th:if="${song.lengthInSeconds % 60 < 10}">
                             <td th:text="${song.lengthInSeconds/60} + ':0' + ${song.lengthInSeconds % 60}"/>

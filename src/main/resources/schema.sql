@@ -1,11 +1,3 @@
-CREATE TABLE t_song (
-    id integer auto_increment,
-    title varchar(50),
-    album varchar(50),
-    length_in_seconds integer,
-    release_year integer,
-    primary key(id)
-);
 CREATE TABLE t_band(
     id integer auto_increment,
     name varchar(50),
@@ -14,4 +6,15 @@ CREATE TABLE t_band(
     year_of_founding integer,
     number_of_albums integer,
     primary key(id)
-)
+);
+
+CREATE TABLE t_song (
+    id integer auto_increment,
+    title varchar(50),
+    album varchar(50),
+    length_in_seconds integer,
+    release_year integer,
+    id_band integer,
+    primary key(id),
+    foreign key(id_band) references t_band(id)
+);

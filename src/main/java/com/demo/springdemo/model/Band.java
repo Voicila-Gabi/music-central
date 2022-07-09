@@ -3,6 +3,7 @@ package com.demo.springdemo.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -29,4 +30,6 @@ public class Band {
     @Column(name = "number_of_albums")
     private int numberOfAlbums;
 
+    @OneToMany(mappedBy = "band", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Song> songList;
 }

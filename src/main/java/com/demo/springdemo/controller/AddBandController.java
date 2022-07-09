@@ -29,7 +29,7 @@ public class AddBandController {
         System.out.println(band.getFoundingYear());
         System.out.println(band.getNumberOfAlbums());
         saveToDatabase(band);
-        return "addBand";
+        return "redirect:/band";
     }
 
     private void saveToDatabase(Band band) {
