@@ -22,10 +22,14 @@
         <div class="card">
             <div class="card-body bg-light">
                 <div class="card-header">
-                    Add songs in the database
+                    Add or edit songs in the database
                 </div>
                 <div>
                     <form th:action="@{/submitSong}" th:object="${song}" method="post">
+                        <input
+                                class="d-none"
+                                th:field="${song.id}"
+                        />
                         <label for="title" class="form-label">Title:</label>
                         <input
                                 type="text"

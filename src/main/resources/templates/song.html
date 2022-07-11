@@ -32,6 +32,7 @@
                         <td>Band</td>
                         <td>Length</td>
                         <td>Release year</td>
+                        <td>Actions</td>
                     </tr>
                     </thead>    <!--end table header-->
                     <tbody>
@@ -48,6 +49,25 @@
                         </div>
                         <!--end if-->
                         <td th:text="${song.releaseYear}"/>
+                        <!--rand butoane Edit si Delete-->
+                        <td>
+                            <div class="fluid-container">
+                                <div class="row">
+                                    <div class="col-auto mb-1 mb-lg-0"> <!--ca sa nu fie butoanele lipite pe ecrane mici-->
+                                        <form th:action="@{/editSong}" th:object="${song}" method="post">
+                                            <input class="d-none" name="songId" th:value="${song.id}"/>
+                                            <button class="btn btn-primary">Edit</button>
+                                        </form>
+                                    </div>
+                                    <div class="col-auto">
+                                        <form th:action="@{/deleteSong}" th:object="${song}" method="post">
+                                            <input class="d-none" name="songId" th:value="${song.id}"/>
+                                            <button class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
