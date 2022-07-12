@@ -23,11 +23,6 @@ public class AddBandController {
     }
     @PostMapping(value = "/submitBand")
     public String submitBand(@ModelAttribute Band band) {
-        System.out.println(band.getName());
-        System.out.println(band.getGenre());
-        System.out.println(band.getCountryOfOrigin());
-        System.out.println(band.getFoundingYear());
-        System.out.println(band.getNumberOfAlbums());
         saveToDatabase(band);
         return "redirect:/band";
     }

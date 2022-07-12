@@ -35,7 +35,7 @@ public class BandController {
     }
 
     @PostMapping(value="/deleteBand")
-    public String deleteSong(@RequestParam("bandID") int id) {
+    public String deleteBand(@RequestParam("bandID") int id) {
         bandRepository.deleteById(id);
         return"redirect:/band";
     }
